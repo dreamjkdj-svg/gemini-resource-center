@@ -24,12 +24,12 @@
         <div class="text-center mb-20">
             <span class="text-blue-600 font-bold tracking-[0.2em] uppercase text-xs">2026 Master Class Package (Rich Edition)</span>
             <h1 class="text-6xl font-bold mt-6 tracking-tight text-gray-900">강의 패키지 다운로드 센터</h1>
-            <p class="text-gray-500 mt-8 text-xl max-w-3xl mx-auto leading-relaxed">2시간의 완벽한 몰입을 위해 실습 데이터의 분량을 3배 이상 보강했습니다. <br>NotebookLM이 가장 좋아하는 '비정형 데이터'와 '심층 리포트'를 확인하세요.</p>
+            <p class="text-gray-500 mt-8 text-xl max-w-3xl mx-auto leading-relaxed">2시간의 완벽한 몰입을 위해 실습 데이터의 분량을 보강했습니다. <br>NotebookLM이 가장 좋아하는 '비정형 데이터'와 '심층 리포트'를 확인하세요.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             
-            <!-- Item 1: Slide Deck (HTML) -->
+            <!-- Item 1: Slide Deck (주석 처리됨)
             <div class="apple-card p-10 border-t-4 border-blue-500">
                 <div>
                     <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8">
@@ -42,6 +42,7 @@
                     <i class="fa-solid fa-file-code"></i> 슬라이드 HTML 저장
                 </button>
             </div>
+            -->
 
             <!-- Item 2: Customer Reviews (CSV) -->
             <div class="apple-card p-10 border-t-4 border-green-500">
@@ -85,7 +86,7 @@
                 </button>
             </div>
 
-            <!-- Item 5: Lecture Plan (MD) -->
+            <!-- Item 5: Lecture Plan (주석 처리됨)
             <div class="apple-card p-10 border-t-4 border-gray-800">
                 <div>
                     <div class="w-14 h-14 bg-gray-50 text-gray-800 rounded-2xl flex items-center justify-center mb-8">
@@ -98,6 +99,7 @@
                     <i class="fa-solid fa-clipboard-check"></i> 운영 가이드 저장
                 </button>
             </div>
+            -->
 
         </div>
 
@@ -107,7 +109,7 @@
     </div>
 
     <script>
-        // 1. Slide Deck Download
+        // 1. Slide Deck Download (주석 처리 시 함수는 유지하되 호출되지 않음)
         function downloadSlides() {
             const htmlContent = `<!DOCTYPE html>
 <html lang="ko">
@@ -115,13 +117,12 @@
 <body style="font-family: sans-serif; text-align: center; padding: 100px;">
     <h1>Gemini 실무 자동화 40단계 마스터 슬라이드</h1>
     <p>본 파일은 강의용 HTML 슬라이드 완성본의 아카이브입니다.</p>
-    <p style="color: #666;">(Canvas에서 확인하신 40장 분량의 디자인 코드가 이 파일에 저장됩니다)</p>
 </body>
 </html>`;
             downloadFile(htmlContent, 'gemini_master_slides_v2026_final.html', 'text/html');
         }
 
-        // 2. CSV Download (100 Diverse Rows)
+        // 2. CSV Download
         function downloadCSV() {
             let csv = "ID,Category,Date,Rating,Comment,Sentiment\n";
             const reviewPatterns = [
@@ -145,11 +146,10 @@
             downloadFile(csv, 'customer_reviews_enriched_100.csv', 'text/csv');
         }
 
-        // 3. Fact Sheet Download (Rich Content)
+        // 3. Fact Sheet Download
         function downloadFactSheet() {
             const content = `[2026 친환경 텀블러 실무 리서치 리포트]
 발행일: 2026. 05. 06
-분량: NotebookLM 심화 분석용 고밀도 데이터
 
 1. 소재 공학적 분석 (Lifecycle Assessment)
 - 대나무 섬유 복합재(BFC): 일반 플라스틱 대비 가공 에너지가 38% 적게 소요됨.
@@ -165,46 +165,34 @@
 - 폐기물 처리 비용: 폐합성수지 배출량 연간 1.2톤 감소 효과.
 
 4. 경쟁사 비교 (Intelligence)
-- A사: 리사이클 플라스틱 사용하나 각인 서비스 유료 및 고가.
-- B사: 스테인리스 위주라 무겁고 세척이 불편하다는 VOC 다수 존재.
 - 자사(Bamboo-Pro): 경량성(220g)과 천연 항균력을 강점으로 내세움.`;
             downloadFile(content, 'deep_research_eco_tumbler_2026.txt', 'text/plain');
         }
 
-        // 4. Prompt Bank Download (Golden Templates)
+        // 4. Prompt Bank Download
         function downloadPromptBank() {
             const content = `[Gemini 실무 자동화 골든 프롬프트 뱅크]
 
-1. [Summon] 전문가 비서 소환 (체인 오브 쏘트 포함)
-"너는 10년 차 IT 전략 기획자이자 비즈니스 커뮤니케이션 전문가야. 현재 나는 신규 입사자를 위한 AI 활용 가이드북을 만들려고 해. 먼저 이 가이드북의 핵심 타겟을 분석하기 위해 나에게 필요한 정보 5가지를 역으로 질문해줘. 그 정보를 바탕으로 목차를 짤 거야."
+1. [Summon] 전문가 비서 소환
+"너는 10년 차 IT 전략 기획자이자 비즈니스 커뮤니케이션 전문가야. 먼저 가이드북의 핵심 타겟을 분석하기 위해 나에게 필요한 정보 5가지를 역으로 질문해줘."
 
-2. [Research] 퍼플렉시티 데이터 보강 (신뢰도 극대화)
-"2026년 기준 대한민국 30대 직장인들의 친환경 소비 트렌드 변화 수치를 소수점 단위까지 정확하게 찾아줘. 특히 구매 결정에 미치는 요인 중 '가격'과 '브랜드 이미지'의 비중을 퍼센트로 나타내고, 해당 통계가 실린 기사 링크를 3개 이상 포함해줘."
+2. [Research] 퍼플렉시티 데이터 보강
+"2026년 기준 대한민국 30대 직장인들의 친환경 소비 트렌드 수치를 찾아줘. 통계가 실린 기사 링크를 3개 이상 포함해줘."
 
-3. [Synthesis] 제안서 최종 합성 (RCI 마스터 버전)
-"너는 전략 영업 대표야. 퍼플렉시티에서 찾은 '친환경 제품 도입 시 기업 선호도 15% 상승' 수치를 제안서 배경 2절에 배치해줘. 전체 문체는 신뢰감 있는 컨설턴트 톤으로 하고, 중구난방인 내용을 '문제-해결-성과-실행'의 4단계 프레임워크로 재구성해서 구글 문서용으로 작성해줘."
+3. [Synthesis] 제안서 최종 합성
+"너는 전략 영업 대표야. '친환경 제품 도입 시 기업 선호도 15% 상승' 수치를 제안서 배경에 배치해줘. 4단계 프레임워크로 재구성해서 작성해줘."
 
 4. [Masking] 보안 마스킹 가이드
-"다음 텍스트에서 개인정보(이름, 이메일, 주소, 전화번호)와 회사명, 내부 프로젝트 암호명을 모두 마스킹 처리해줘. [이름 -> 사용자A], [회사명 -> O사], [연락처 -> 010-XXXX-XXXX] 형식을 지켜줘."`;
+"다음 텍스트에서 개인정보와 회사명을 마스킹 처리해줘. [이름 -> 사용자A], [회사명 -> O사] 형식을 지켜줘."`;
             downloadFile(content, 'gemini_golden_prompt_bank_2026.txt', 'text/plain');
         }
 
         // 5. Checklist Download
         function downloadChecklist() {
             const content = `# 📋 강사 마스터 가이드: 120분의 예술
-
-## PHASE 1: 사전 온보딩 (D-2)
-- [ ] 수강생들에게 계정 확인 메일 발송 (시크릿 모드 사용법 포함)
-- [ ] NotebookLM 접속 시 구글 계정 연동 문제 사전 체크 안내
-
-## PHASE 2: 라이브 테크 세팅 (D-Day)
-- [ ] 듀얼 모니터: 시연 화면 / 수강생 채팅창 & 타이머
-- [ ] 프롬프트 뱅크 텍스트 파일 열기 (채팅창 복사용)
-- [ ] "화면이 안 보여요" 대응용 줌 화면 공유 재설정 방법 숙지
-
-## PHASE 3: 강의 중 마인드셋
-- [ ] 실습 중 발생하는 "제 화면은 달라요" 질문에 대해 "2026년 업데이트 버전이 다를 수 있으니 공통 경로를 보세요"라고 유연하게 대처하기.
-- [ ] 1차시 종료 후 반드시 10분간 마이크 끄고 온전히 휴식할 것.`;
+- 사전 온보딩 전략
+- 라이브 테크 세팅 가이드
+- 업데이트 대응 마인드셋`;
             downloadFile(content, 'lecture_master_guide_2026.md', 'text/markdown');
         }
 
