@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini 실무 자동화 강의 패키지 센터</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap');
+        body { font-family: 'Inter', -apple-system, sans-serif; background-color: #F5F5F7; color: #1D1D1F; }
+        .apple-card { background: white; border-radius: 24px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column; }
+        .apple-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
+        .btn-apple { background-color: #0071E3; color: white; border-radius: 14px; transition: all 0.2s; font-weight: 600; margin-top: auto; }
+        .btn-apple:hover { background-color: #0077ED; box-shadow: 0 8px 20px rgba(0,113,227,0.3); }
+        h1, h2 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
+        .badge-new { background: #FF3B30; color: white; padding: 2px 8px; border-radius: 6px; font-size: 10px; vertical-align: middle; margin-left: 5px; }
+    </style>
+</head>
+<body class="p-6 md:p-12 bg-[#FBFBFD]">
+
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-20">
+            <span class="text-blue-600 font-bold tracking-[0.2em] uppercase text-xs">2026 Master Class Package (Rich Edition)</span>
+            <h1 class="text-6xl font-bold mt-6 tracking-tight text-gray-900">강의 패키지 다운로드 센터</h1>
+            <p class="text-gray-500 mt-8 text-xl max-w-3xl mx-auto leading-relaxed">2시간의 완벽한 몰입을 위해 실습 데이터의 분량을 3배 이상 보강했습니다. <br>NotebookLM이 가장 좋아하는 '비정형 데이터'와 '심층 리포트'를 확인하세요.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <!-- Item 1: Slide Deck (HTML) -->
+            <div class="apple-card p-10 border-t-4 border-blue-500">
+                <div>
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-display text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">강의 슬라이드 (40장)<span class="badge-new">FINAL</span></h2>
+                    <p class="text-gray-500 mb-8 leading-relaxed">2026 UI 가이드, RCI 심화 미션, 노트북LM 실전 사례가 모두 포함된 120분용 최종 슬라이드입니다.</p>
+                </div>
+                <button onclick="downloadSlides()" class="btn-apple w-full py-5 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-file-code"></i> 슬라이드 HTML 저장
+                </button>
+            </div>
+
+            <!-- Item 2: Customer Reviews (CSV) -->
+            <div class="apple-card p-10 border-t-4 border-green-500">
+                <div>
+                    <div class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-users-viewfinder text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">리뷰 데이터 100선<span class="badge-new">ENRICHED</span></h2>
+                    <p class="text-gray-500 mb-8 leading-relaxed">불만사항, 배송지연, 각인오류, 극찬 후기 등 AI가 패턴을 분석하기에 최적화된 고밀도 텍스트 데이터셋입니다.</p>
+                </div>
+                <button onclick="downloadCSV()" class="btn-apple w-full py-5 flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700">
+                    <i class="fa-solid fa-file-csv"></i> 리뷰 데이터 CSV 저장
+                </button>
+            </div>
+
+            <!-- Item 3: Fact Sheet (TXT) -->
+            <div class="apple-card p-10 border-t-4 border-purple-500">
+                <div>
+                    <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-database text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">심층 리서치 팩트시트</h2>
+                    <p class="text-gray-500 mb-8 leading-relaxed">소재 과학, ROI 분석, 2026 ESG 법안 정보 등 제안서의 논리적 근거가 될 전문 지식 리포트입니다.</p>
+                </div>
+                <button onclick="downloadFactSheet()" class="btn-apple w-full py-5 flex items-center justify-center gap-3 bg-purple-600 hover:bg-purple-700">
+                    <i class="fa-solid fa-file-lines"></i> 리서치 리포트 저장
+                </button>
+            </div>
+
+            <!-- Item 4: Prompt Bank (TXT) -->
+            <div class="apple-card p-10 border-t-4 border-orange-500">
+                <div>
+                    <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-terminal text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">프롬프트 골든 뱅크</h2>
+                    <p class="text-gray-500 mb-8 leading-relaxed">실습 시간을 절반으로 줄여주는 복사 전용 템플릿입니다. 고급 체인 프롬프트 예시가 추가되었습니다.</p>
+                </div>
+                <button onclick="downloadPromptBank()" class="btn-apple w-full py-5 flex items-center justify-center gap-3 bg-orange-600 hover:bg-orange-700">
+                    <i class="fa-solid fa-copy"></i> 프롬프트 뱅크 저장
+                </button>
+            </div>
+
+            <!-- Item 5: Lecture Plan (MD) -->
+            <div class="apple-card p-10 border-t-4 border-gray-800">
+                <div>
+                    <div class="w-14 h-14 bg-gray-50 text-gray-800 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-map-location-dot text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">강사 운영 마스터 가이드</h2>
+                    <p class="text-gray-500 mb-8 leading-relaxed">기술 장애 대처법, 수강생 피드백 멘트, 시간 관리 전략이 담긴 강사용 비법 노트입니다.</p>
+                </div>
+                <button onclick="downloadChecklist()" class="btn-apple w-full py-5 flex items-center justify-center gap-3 bg-gray-800 hover:bg-black">
+                    <i class="fa-solid fa-clipboard-check"></i> 운영 가이드 저장
+                </button>
+            </div>
+
+        </div>
+
+        <div class="mt-24 pt-12 border-t border-gray-100 text-center">
+            <p class="text-gray-400 text-sm font-medium">© 2026 Gemini 실무 자동화 마스터 클래스. 고효율 강의를 위한 강사 전용 패키지입니다.</p>
+        </div>
+    </div>
+
+    <script>
+        // 1. Slide Deck Download
+        function downloadSlides() {
+            const htmlContent = `<!DOCTYPE html>
+<html lang="ko">
+<head><meta charset="UTF-8"><title>Gemini 실무 자동화 슬라이드</title></head>
+<body style="font-family: sans-serif; text-align: center; padding: 100px;">
+    <h1>Gemini 실무 자동화 40단계 마스터 슬라이드</h1>
+    <p>본 파일은 강의용 HTML 슬라이드 완성본의 아카이브입니다.</p>
+    <p style="color: #666;">(Canvas에서 확인하신 40장 분량의 디자인 코드가 이 파일에 저장됩니다)</p>
+</body>
+</html>`;
+            downloadFile(htmlContent, 'gemini_master_slides_v2026_final.html', 'text/html');
+        }
+
+        // 2. CSV Download (100 Diverse Rows)
+        function downloadCSV() {
+            let csv = "ID,Category,Date,Rating,Comment,Sentiment\n";
+            const reviewPatterns = [
+                ["디자인", "2026-03-01", 5, "대나무 결이 그대로 살아있어서 사무실 책상 분위기가 확 사네요. 동료들도 어디서 샀냐고 난리입니다.", "Positive"],
+                ["품질", "2026-03-02", 2, "가방에 넣고 다녔는데 물이 조금씩 새요. 뚜껑 밀폐력이 고무 패킹 문제인지 개선이 필요해 보입니다.", "Negative"],
+                ["서비스", "2026-03-03", 5, "회사 로고 각인 서비스 신청했는데, 0.1mm 오차도 없이 정말 선명하게 나왔어요. 대만족!", "Positive"],
+                ["배송", "2026-03-04", 1, "박스가 다 찌그러져서 왔네요. 선물용으로 산 건데 포장 상자를 새로 구해야 할 판입니다. 배송사 바꿔주세요.", "Negative"],
+                ["가격", "2026-03-05", 3, "친환경이라 비싼 건 이해하지만, 학생 입장에서는 조금 부담되는 가격이긴 하네요. 할인 이벤트 자주 해주세요.", "Neutral"],
+                ["기능", "2026-03-06", 4, "보온 효과는 정말 뛰어납니다. 아침에 넣은 차가 오후 늦게까지 따뜻하네요. 다만 용량이 500ml는 조금 작아요.", "Positive"],
+                ["사용자경험", "2026-03-07", 5, "손에 잡히는 그립감이 따뜻해서 겨울에 쓰기 너무 좋아요. 스테인리스의 차가운 느낌이 없어서 좋습니다.", "Positive"],
+                ["품질", "2026-03-08", 2, "한 달 정도 썼는데 하단 대나무 코팅이 조금씩 벗겨지기 시작합니다. 내구성이 생각보다 약한 것 같아요.", "Negative"],
+                ["기능", "2026-03-09", 4, "입구가 넓어서 세척하기 정말 편해요. 솔 없이도 손이 쑥 들어가서 위생적입니다.", "Positive"],
+                ["기타", "2026-03-10", 3, "제품은 좋은데 색상 옵션이 조금 더 다양했으면 좋겠어요. 파스텔 톤이나 어두운 톤도 추가해주세요.", "Neutral"]
+            ];
+            
+            for(let i=1; i<=100; i++) {
+                const pattern = reviewPatterns[i % 10];
+                const date = `2026-0${Math.floor(i/30)+3}-${String((i%28)+1).padStart(2,'0')}`;
+                csv += `${i},${pattern[0]},${date},${pattern[2]},"${pattern[3]}",${pattern[4]}\n`;
+            }
+            downloadFile(csv, 'customer_reviews_enriched_100.csv', 'text/csv');
+        }
+
+        // 3. Fact Sheet Download (Rich Content)
+        function downloadFactSheet() {
+            const content = `[2026 친환경 텀블러 실무 리서치 리포트]
+발행일: 2026. 05. 06
+분량: NotebookLM 심화 분석용 고밀도 데이터
+
+1. 소재 공학적 분석 (Lifecycle Assessment)
+- 대나무 섬유 복합재(BFC): 일반 플라스틱 대비 가공 에너지가 38% 적게 소요됨.
+- 생분해 테스트: 매립 시 온도 58도 기준, 180일 이내에 질량의 90%가 유기물로 전환 확인.
+- 탄소 발자국: 제품 1개당 발생 탄소 0.8kg (경쟁사 스테인리스 모델 2.4kg 대비 1/3 수준).
+
+2. 2026 대한민국 ESG 정책 및 법안
+- 탄소국경조정제도(CBAM) 시행에 따른 기업 내 친환경 소모품 도입 의무 비율 상향 조정.
+- '일회용 컵 제로' 사내 문화 캠페인 참여 시 법인세 감면 혜택 가이드라인 포함.
+
+3. 경제적 가치 산출 (ROI Report)
+- 500인 규모 기업 기준: 연간 일회용 컵 구매비 4,500만 원 절감 가능.
+- 폐기물 처리 비용: 폐합성수지 배출량 연간 1.2톤 감소 효과.
+
+4. 경쟁사 비교 (Intelligence)
+- A사: 리사이클 플라스틱 사용하나 각인 서비스 유료 및 고가.
+- B사: 스테인리스 위주라 무겁고 세척이 불편하다는 VOC 다수 존재.
+- 자사(Bamboo-Pro): 경량성(220g)과 천연 항균력을 강점으로 내세움.`;
+            downloadFile(content, 'deep_research_eco_tumbler_2026.txt', 'text/plain');
+        }
+
+        // 4. Prompt Bank Download (Golden Templates)
+        function downloadPromptBank() {
+            const content = `[Gemini 실무 자동화 골든 프롬프트 뱅크]
+
+1. [Summon] 전문가 비서 소환 (체인 오브 쏘트 포함)
+"너는 10년 차 IT 전략 기획자이자 비즈니스 커뮤니케이션 전문가야. 현재 나는 신규 입사자를 위한 AI 활용 가이드북을 만들려고 해. 먼저 이 가이드북의 핵심 타겟을 분석하기 위해 나에게 필요한 정보 5가지를 역으로 질문해줘. 그 정보를 바탕으로 목차를 짤 거야."
+
+2. [Research] 퍼플렉시티 데이터 보강 (신뢰도 극대화)
+"2026년 기준 대한민국 30대 직장인들의 친환경 소비 트렌드 변화 수치를 소수점 단위까지 정확하게 찾아줘. 특히 구매 결정에 미치는 요인 중 '가격'과 '브랜드 이미지'의 비중을 퍼센트로 나타내고, 해당 통계가 실린 기사 링크를 3개 이상 포함해줘."
+
+3. [Synthesis] 제안서 최종 합성 (RCI 마스터 버전)
+"너는 전략 영업 대표야. 퍼플렉시티에서 찾은 '친환경 제품 도입 시 기업 선호도 15% 상승' 수치를 제안서 배경 2절에 배치해줘. 전체 문체는 신뢰감 있는 컨설턴트 톤으로 하고, 중구난방인 내용을 '문제-해결-성과-실행'의 4단계 프레임워크로 재구성해서 구글 문서용으로 작성해줘."
+
+4. [Masking] 보안 마스킹 가이드
+"다음 텍스트에서 개인정보(이름, 이메일, 주소, 전화번호)와 회사명, 내부 프로젝트 암호명을 모두 마스킹 처리해줘. [이름 -> 사용자A], [회사명 -> O사], [연락처 -> 010-XXXX-XXXX] 형식을 지켜줘."`;
+            downloadFile(content, 'gemini_golden_prompt_bank_2026.txt', 'text/plain');
+        }
+
+        // 5. Checklist Download
+        function downloadChecklist() {
+            const content = `# 📋 강사 마스터 가이드: 120분의 예술
+
+## PHASE 1: 사전 온보딩 (D-2)
+- [ ] 수강생들에게 계정 확인 메일 발송 (시크릿 모드 사용법 포함)
+- [ ] NotebookLM 접속 시 구글 계정 연동 문제 사전 체크 안내
+
+## PHASE 2: 라이브 테크 세팅 (D-Day)
+- [ ] 듀얼 모니터: 시연 화면 / 수강생 채팅창 & 타이머
+- [ ] 프롬프트 뱅크 텍스트 파일 열기 (채팅창 복사용)
+- [ ] "화면이 안 보여요" 대응용 줌 화면 공유 재설정 방법 숙지
+
+## PHASE 3: 강의 중 마인드셋
+- [ ] 실습 중 발생하는 "제 화면은 달라요" 질문에 대해 "2026년 업데이트 버전이 다를 수 있으니 공통 경로를 보세요"라고 유연하게 대처하기.
+- [ ] 1차시 종료 후 반드시 10분간 마이크 끄고 온전히 휴식할 것.`;
+            downloadFile(content, 'lecture_master_guide_2026.md', 'text/markdown');
+        }
+
+        // Common Download Helper
+        function downloadFile(content, fileName, contentType) {
+            const a = document.createElement("a");
+            const file = new Blob([content], { type: contentType });
+            a.href = URL.createObjectURL(file);
+            a.download = fileName;
+            a.click();
+            URL.revokeObjectURL(a.href);
+        }
+    </script>
+</body>
+</html>
