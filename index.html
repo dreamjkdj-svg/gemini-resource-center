@@ -26,7 +26,7 @@
         <div class="text-center mb-16">
             <span class="text-blue-600 font-bold tracking-[0.2em] uppercase text-xs">2026 Master Class Package (Ultimate Edition)</span>
             <h1 class="text-6xl font-bold mt-6 tracking-tight text-gray-900">강의 패키지 다운로드 센터</h1>
-            <p class="text-gray-500 mt-8 text-xl max-w-3xl mx-auto leading-relaxed">성공적인 AI 실무 자동화 강의를 위한 모든 도구와 데이터를 한곳에 모았습니다. <br>아래에서 실습 도구에 접속하거나 고밀도 데이터를 다운로드하세요.</p>
+            <p class="text-gray-500 mt-8 text-xl max-w-3xl mx-auto leading-relaxed">성공적인 AI 실무 자동화 강의를 위한 모든 도구와 데이터를 한곳에 모았습니다. <br>아래에서 실습 도구에 접속하거나 <strong>제안서 및 브로셔 샘플</strong>을 다운로드하세요.</p>
         </div>
 
         <!-- Section 1: Quick Access Tools -->
@@ -64,85 +64,89 @@
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             
-            <!-- Hidden: Slide Deck
-            <div class="apple-card p-10 border-t-4 border-blue-500 opacity-50">
+            <!-- Item 1: Tumbler Proposal Sample (NEW) -->
+            <div class="apple-card p-10 border-t-4 border-blue-600">
                 <div>
                     <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i class="fa-solid fa-display text-2xl"></i>
+                        <i class="fa-solid fa-file-signature text-2xl"></i>
                     </div>
-                    <h2 class="text-2xl font-bold mb-4">강의 슬라이드</h2>
-                    <p class="text-gray-500 mb-8 leading-relaxed">비공개 자료입니다.</p>
+                    <h2 class="text-2xl font-bold mb-4">텀블러 제안서 샘플<span class="badge-new">NEW</span></h2>
+                    <p class="text-gray-500 mb-8 leading-relaxed">제미나이로 완성한 실제 '친환경 텀블러 납품 제안서'의 최종본 예시입니다. 실습의 가이드로 활용하세요.</p>
                 </div>
+                <button onclick="downloadProposalSample()" class="btn-apple w-full py-5 flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700">
+                    <i class="fa-solid fa-file-pdf"></i> 제안서 샘플 저장
+                </button>
             </div>
-            -->
 
-            <!-- Item 1: Customer Reviews (CSV) -->
+            <!-- Item 2: Competitor Brochures (NEW) -->
+            <div class="apple-card p-10 border-t-4 border-indigo-500">
+                <div>
+                    <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fa-solid fa-copy text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">경쟁사 브로셔 샘플<span class="badge-new">NEW</span></h2>
+                    <p class="text-gray-500 mb-8 leading-relaxed">NotebookLM 교차 분석용 가상 경쟁사 3곳의 상세 제품 사양서입니다. 비교 분석 실습에 필수적입니다.</p>
+                </div>
+                <button onclick="downloadCompetitors()" class="btn-apple w-full py-5 flex items-center justify-center gap-3 bg-indigo-600 hover:bg-indigo-700">
+                    <i class="fa-solid fa-file-invoice"></i> 경쟁사 데이터 저장
+                </button>
+            </div>
+
+            <!-- Item 3: Customer Reviews (CSV) -->
             <div class="apple-card p-10 border-t-4 border-green-500">
                 <div>
                     <div class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-8">
                         <i class="fa-solid fa-users-viewfinder text-2xl"></i>
                     </div>
-                    <h2 class="text-2xl font-bold mb-4">리뷰 데이터 100선<span class="badge-new">ENRICHED</span></h2>
-                    <p class="text-gray-500 mb-8 leading-relaxed">패턴 분석 실습용 고밀도 데이터셋입니다. NotebookLM에 업로드하여 불만 지점을 찾아보세요.</p>
+                    <h2 class="text-2xl font-bold mb-4">리뷰 데이터 100선</h2>
+                    <p class="text-gray-500 mb-8 leading-relaxed">대규모 데이터 분석 실습용 CSV 파일입니다. NotebookLM에 업로드하여 고객 불만 지점을 분석하세요.</p>
                 </div>
                 <button onclick="downloadCSV()" class="btn-apple w-full py-5 flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700">
-                    <i class="fa-solid fa-file-csv"></i> 리뷰 데이터 (CSV) 저장
+                    <i class="fa-solid fa-file-csv"></i> 리뷰 데이터 CSV 저장
                 </button>
             </div>
 
-            <!-- Item 2: Fact Sheet (TXT) -->
+            <!-- Item 4: Fact Sheet (TXT) -->
             <div class="apple-card p-10 border-t-4 border-purple-500">
                 <div>
                     <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-8">
                         <i class="fa-solid fa-database text-2xl"></i>
                     </div>
                     <h2 class="text-2xl font-bold mb-4">심층 리서치 팩트시트</h2>
-                    <p class="text-gray-500 mb-8 leading-relaxed">2026년 소재 과학 데이터 및 ESG 시장 통계 리포트입니다. 제안서의 논리적 근거로 활용하세요.</p>
+                    <p class="text-gray-500 mb-8 leading-relaxed">2026년 소재 과학 데이터 및 탄소 저감 통계가 담긴 텍스트 리포트입니다. 논리적 근거로 활용하세요.</p>
                 </div>
                 <button onclick="downloadFactSheet()" class="btn-apple w-full py-5 flex items-center justify-center gap-3 bg-purple-600 hover:bg-purple-700">
-                    <i class="fa-solid fa-file-lines"></i> 리서치 리포트 (TXT) 저장
+                    <i class="fa-solid fa-file-lines"></i> 리서치 리포트 저장
                 </button>
             </div>
 
-            <!-- Item 3: Prompt Bank (TXT) -->
+            <!-- Item 5: Prompt Bank (TXT) -->
             <div class="apple-card p-10 border-t-4 border-orange-500">
                 <div>
                     <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-8">
                         <i class="fa-solid fa-terminal text-2xl"></i>
                     </div>
                     <h2 class="text-2xl font-bold mb-4">프롬프트 골든 뱅크</h2>
-                    <p class="text-gray-500 mb-8 leading-relaxed">전문가 소환, 합성 프롬프트 등 강의 중 즉시 복사해서 쓸 수 있는 템플릿 모음입니다.</p>
+                    <p class="text-gray-500 mb-8 leading-relaxed">복사해서 즉시 사용할 수 있는 전문가 소환 및 합성 프롬프트 템플릿 모음입니다.</p>
                 </div>
                 <button onclick="downloadPromptBank()" class="btn-apple w-full py-5 flex items-center justify-center gap-3 bg-orange-600 hover:bg-orange-700">
-                    <i class="fa-solid fa-copy"></i> 프롬프트 뱅크 (TXT) 저장
+                    <i class="fa-solid fa-copy"></i> 프롬프트 뱅크 저장
                 </button>
             </div>
 
-            <!-- Item 4: Proposal Framework (NEW) -->
+            <!-- Item 6: Proposal Framework (TXT) -->
             <div class="apple-card p-10 border-t-4 border-red-500">
                 <div>
                     <div class="w-14 h-14 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i class="fa-solid fa-file-signature text-2xl"></i>
+                        <i class="fa-solid fa-table-columns text-2xl"></i>
                     </div>
-                    <h2 class="text-2xl font-bold mb-4">제안서 프레임워크<span class="badge-new">NEW</span></h2>
-                    <p class="text-gray-500 mb-8 leading-relaxed">1페이지 제안서 미션 수행 시 논리 구조(문제-해결-기대성과)를 잡아주는 가이드 템플릿입니다.</p>
+                    <h2 class="text-2xl font-bold mb-4">제안서 프레임워크</h2>
+                    <p class="text-gray-500 mb-8 leading-relaxed">1페이지 제안서 미션 수행 시 논리 구조(문제-해결-성과)를 잡아주는 마스터 가이드입니다.</p>
                 </div>
                 <button onclick="downloadProposalFramework()" class="btn-apple w-full py-5 flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700">
                     <i class="fa-solid fa-file-invoice"></i> 템플릿 가이드 저장
                 </button>
             </div>
-
-            <!-- Hidden: Master Guide
-            <div class="apple-card p-10 border-t-4 border-gray-800 opacity-50">
-                <div>
-                    <div class="w-14 h-14 bg-gray-50 text-gray-800 rounded-2xl flex items-center justify-center mb-8">
-                        <i class="fa-solid fa-map-location-dot text-2xl"></i>
-                    </div>
-                    <h2 class="text-2xl font-bold mb-4">강사 마스터 가이드</h2>
-                    <p class="text-gray-500 mb-8 leading-relaxed">비공개 자료입니다.</p>
-                </div>
-            </div>
-            -->
 
         </div>
 
@@ -152,18 +156,69 @@
     </div>
 
     <script>
-        // 1. CSV Download (Enriched with 100 entries)
+        // 1. Tumbler Proposal Sample (NEW)
+        function downloadProposalSample() {
+            const content = `[최종 제안서 샘플] 2026 친환경 기업 문화를 위한 에코-스마트 솔루션
+
+1. 프로젝트 제목: 탄소중립 실천을 위한 전사적 개인 텀블러 도입 제안
+2. 작성자: (주)에코플로우 전략 기획팀
+
+3. 제안 배경
+- 사내 일회용 컵 배출량 연간 약 125,000개 기록 (전년 대비 15% 상승)
+- 2026년부터 시행되는 탄소국경세 및 국내 ESG 공시 의무화 대응 시급
+- 임직원 설문조사 결과, 82%가 "실효성 있는 친환경 사내 문화" 갈망
+
+4. 솔루션: Bamboo-Pro 대나무 섬유 텀블러
+- 소재: 생분해 대나무 복합재 (BFC) 100%
+- 강점: 일반 플라스틱 대비 탄소 발생 45% 저감, 매립 시 2년 내 자연 생분해
+- 기능: 자체 항균 99.9%, 경량 설계(220g), 기업 로고 미세 각인 지원
+
+5. 기대 효과
+- 재무적 효과: 연간 일회용 컵 구매 예산 약 4,500만 원 절감 (ROI 210%)
+- 환경적 효과: 소나무 2,500그루 식재와 동일한 탄소 저감 효과
+- 이미지 제고: 업계 최초 '제로-플라스틱' 오피스 인증 획득 기반 마련
+
+6. 실행 계획
+- 시범 도입: 2026년 6월 (본사 500명 대상)
+- 전사 확산: 2026년 9월 (지사 포함 전 임직원)`;
+            downloadFile(content, 'sample_tumbler_proposal_2026.txt', 'text/plain');
+        }
+
+        // 2. Competitor Brochures Download
+        function downloadCompetitors() {
+            const content = `[2026년 기업용 텀블러 시장 경쟁사 제품 상세 사양서]
+
+1. 경쟁사 A: "에코-라이트(Eco-Light)"
+- 주력 소재: 화학적 재활용 플라스틱(rPP) 100%
+- 단가: 개당 8,500원 (대량 구매 시 10% 추가 할인)
+- 강점: 저렴한 가격, 매우 가벼움, 파스텔 톤 24색 선택 가능
+- 약점: 보온/보냉 시간 2시간 미만, 미세 스크래치 취약, 재활용 소재이나 최종 폐기 시 생분해 불가
+
+2. 경쟁사 B: "스틸-마스터(Steel-Master)"
+- 주력 소재: 의료용 스테인리스 316 (이중 진공)
+- 단가: 개당 32,000원
+- 강점: 보온 최대 12시간, 보냉 24시간, 반영구적 수명, 브랜드 인지도 높음
+- 약점: 제조 공정 시 탄소 발생량 높음(자사 대비 3배), 480g의 무거운 무게로 휴대성 저하
+
+3. 경쟁사 C: "오피스-베이직(Office-Basic)"
+- 주력 소재: 일반 강화 유리 및 실리콘 슬리브
+- 단가: 개당 15,000원
+- 강점: 냄새 배임 없음, 전자레인지 사용 가능
+- 약점: 파손 위험 높음(사내 안전 사고 우려), ESG 홍보 키워드로 활용하기에는 일반적임`;
+            downloadFile(content, 'competitor_brochures_pack.txt', 'text/plain');
+        }
+
+        // 3. CSV Download (Customer Reviews)
         function downloadCSV() {
             let csv = "ID,Category,Date,Rating,Comment,Sentiment\n";
             const reviewPatterns = [
                 ["디자인", "2026-03-01", 5, "대나무 결이 그대로 살아있어서 사무실 책상 분위기가 확 사네요. 동료들도 어디서 샀냐고 난리입니다.", "Positive"],
                 ["품질", "2026-03-02", 2, "가방에 넣고 다녔는데 물이 조금씩 새요. 뚜껑 밀폐력이 고무 패킹 문제인지 개선이 필요해 보입니다.", "Negative"],
                 ["서비스", "2026-03-03", 5, "회사 로고 각인 서비스 신청했는데, 0.1mm 오차도 없이 정말 선명하게 나왔어요. 대만족!", "Positive"],
-                ["배송", "2026-03-04", 1, "박스가 다 찌그러져서 왔네요. 선물용으로 산 건데 포장 상자를 새로 구해야 할 판입니다. 배송사 바꿔주세요.", "Negative"],
+                ["배송", "2026-03-04", 1, "박스가 다 찌그러져서 왔네요. 선물용으로 산 건데 포장 상자를 새로 구해야 할 판입니다.", "Negative"],
                 ["기능", "2026-03-06", 4, "보온 효과는 정말 뛰어납니다. 아침에 넣은 차가 오후 늦게까지 따뜻하네요. 다만 용량이 500ml는 조금 작아요.", "Positive"],
                 ["품질", "2026-03-10", 2, "한 달 정도 썼는데 하단 대나무 코팅이 조금씩 벗겨지기 시작합니다. 내구성이 생각보다 약한 것 같아요.", "Negative"]
             ];
-            
             for(let i=1; i<=100; i++) {
                 const pattern = reviewPatterns[i % 6];
                 const date = `2026-0${Math.floor(i/30)+3}-${String((i%28)+1).padStart(2,'0')}`;
@@ -172,67 +227,39 @@
             downloadFile(csv, 'customer_reviews_enriched_100.csv', 'text/csv');
         }
 
-        // 2. Fact Sheet Download (Rich)
+        // 4. Fact Sheet Download
         function downloadFactSheet() {
             const content = `[2026 친환경 텀블러 실무 리서치 리포트]
-발행일: 2026. 05. 06
-
-1. 소재 공학적 분석 (Lifecycle Assessment)
-- 대나무 섬유 복합재(BFC): 일반 플라스틱 대비 가공 에너지가 38% 적게 소요됨.
-- 생분해 테스트: 매립 시 온도 58도 기준, 180일 이내에 질량의 90%가 유기물로 전환 확인.
 - 탄소 발자국: 제품 1개당 발생 탄소 0.8kg (경쟁사 스테인리스 모델 2.4kg 대비 1/3 수준).
-
-2. 2026 대한민국 ESG 정책 및 법안
-- 탄소국경조정제도(CBAM) 시행에 따른 기업 내 친환경 소모품 도입 의무 비율 상향 조정.
-- '일회용 컵 제로' 사내 문화 캠페인 참여 시 법인세 감면 혜택 가이드라인 포함.
-
-3. 경제적 가치 산출 (ROI Report)
-- 500인 규모 기업 기준: 연간 일회용 컵 구매비 4,500만 원 절감 가능.
-- 폐기물 처리 비용: 폐합성수지 배출량 연간 1.2톤 감소 효과.`;
+- 생분해 테스트: 매립 시 온도 58도 기준, 180일 이내에 질량의 90%가 유기물로 전환 확인.
+- 경제적 가치: 연간 일회용 컵 구매비 4,500만 원 절감 가능 (500인 규모 기업 기준).`;
             downloadFile(content, 'deep_research_eco_tumbler_2026.txt', 'text/plain');
         }
 
-        // 3. Prompt Bank Download
+        // 5. Prompt Bank Download
         function downloadPromptBank() {
             const content = `[Gemini 실무 자동화 골든 프롬프트 뱅크]
-
 1. [Summon] 전문가 비서 소환
-"너는 10년 차 IT 전략 기획자이자 비즈니스 커뮤니케이션 전문가야. 먼저 가이드북의 핵심 타겟을 분석하기 위해 나에게 필요한 정보 5가지를 역으로 질문해줘."
-
+"너는 10년 차 IT 전략 기획자야. 먼저 가이드북의 핵심 타겟을 분석하기 위해 나에게 필요한 정보 5가지를 역으로 질문해줘."
 2. [Research] 퍼플렉시티 데이터 보강
-"2026년 기준 대한민국 30대 직장인들의 친환경 소비 트렌드 수치를 찾아줘. 통계가 실린 기사 링크를 3개 이상 포함해줘."
-
+"2026년 기준 대한민국 30대 직장인들의 친환경 소비 트렌드 통계 기사 링크를 찾아줘."
 3. [Synthesis] 제안서 최종 합성
-"너는 전략 영업 대표야. '친환경 제품 도입 시 기업 선호도 15% 상승' 수치를 제안서 배경에 배치해줘. 전체 문체는 신뢰감 있는 컨설턴트 톤으로 하고, 4단계 프레임워크로 재구성해서 작성해줘."
-
-4. [Masking] 보안 마스킹 가이드
-"다음 텍스트에서 개인정보와 회사명을 마스킹 처리해줘. [이름 -> 사용자A], [회사명 -> O사] 형식을 지켜줘."`;
+"4단계 프레임워크(문제-해결-성과-실행)로 재구성해서 작성해줘."`;
             downloadFile(content, 'gemini_golden_prompt_bank_2026.txt', 'text/plain');
         }
 
-        // 4. Proposal Framework Download
+        // 6. Proposal Framework Download
         function downloadProposalFramework() {
-            const content = `[1페이지 제안서 표준 프레임워크 (Master Template)]
-
-1. 제목 (Impactful Title)
-- 결정권자의 눈을 사로잡는 수치 중심의 제목
-
-2. 현황 및 문제점 (Current Status)
-- 현재 우리가 직면한 비효율이나 비용 낭비 (객관적 데이터 제시)
-
-3. 제안 솔루션 (Proposed Solution)
-- 제미나이와 퍼플렉시티로 도출한 구체적인 대안
-
-4. 기대 효과 (Expected ROI)
-- 재무적 이득 (비용 절감)
-- 비재무적 이득 (브랜드 이미지, ESG 지표 상승)
-
-5. 실행 계획 (Implementation)
-- 소요 예산, 기간, 담당 부서`;
+            const content = `[1페이지 제안서 표준 프레임워크]
+1. 제목: 수치와 성과가 한눈에 들어오는 Impactful Title
+2. 배경/현황: 데이터로 증명하는 현재의 비효율 (Problem)
+3. 솔루션: 제미나이로 도출한 구체적인 대안 (Solution)
+4. 성과 지표: 비용 절감액 및 ESG 기여도 (Benefit)
+5. 실행 계획: 일정 및 소요 예산 (Plan)`;
             downloadFile(content, 'proposal_framework_template.txt', 'text/plain');
         }
 
-        // Generic Download Helper
+        // Common Download Helper
         function downloadFile(content, fileName, contentType) {
             const a = document.createElement("a");
             const file = new Blob([content], { type: contentType });
